@@ -20,4 +20,8 @@ public class ControlUnit : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void LoadGenerate()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

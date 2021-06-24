@@ -36,7 +36,7 @@ public class GridManager : MonoBehaviour
 
     public void Start()
     {
-        //Generate();
+        
     }
 
     public void Generate()
@@ -54,7 +54,7 @@ public class GridManager : MonoBehaviour
         selectedColorTileCounter = 1;
         direction = Random.Range(1, 4);
     }
-
+    /*
     public void Regenerate()
     {
         reds = GameObject.FindGameObjectsWithTag("Red");
@@ -76,9 +76,13 @@ public class GridManager : MonoBehaviour
         timeBtwColor = 0f;
         Generate();
 
-    }
+    }*/
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         if (timeBtwColor <= 0 && stopGeneration == false)
         {
             Move();

@@ -5,21 +5,44 @@ using UnityEngine;
 public class SpawnColors : MonoBehaviour
 {
     public LayerMask whatIsRoom;
+    public float waitTime;
     public GridManager gridMang;
+    bool hasColor;
+
+    public GameObject[] notselectedcolors;
+
     private void Update()
     {
         Collider2D colorDetection = Physics2D.OverlapCircle(transform.position, 0.5f, whatIsRoom);
-        if(colorDetection == null && gridMang.stopGeneration ==true)
+        if(gridMang.stopGeneration == true)
         {
-            //Spawn Random Color
-            
-            
-            int rand = Random.Range(0, gridMang.colors.Length); // make the zero one to make sure the other TWO NON SELECTED COLORS spawn.
-            Instantiate(gridMang.colors[rand], transform.position, Quaternion.identity);
-            
-            
-            Destroy(gameObject);
+            if (colorDetection != null)
+            {
+                //Spawn Random Color
+                hasColor = true;
+            }
+
+            if (waitTime <= 0)
+            {
+                if (hasColor == false)
+                {
+                    int rand = Random.Range(0, notselectedcolors.Length); // make the zero one to make sure the other TWO NON SELECTED COLORS spawn.
+
+                    Instantiate(notselectedcolors[rand], transform.position, Quaternion.identity);
+                }
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
+            }
         }
+        
+            
+            
+            
+            
+            
+        
 
     }
 }

@@ -59,9 +59,9 @@
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\ColorType.cs" />
     <Compile Include="Assets\Scripts\SpawnObject.cs" />
-    <Compile Include="Assets\Scripts\GridManager.cs" />
-    <Compile Include="Assets\Scripts\SpawnColors.cs" />
     <Compile Include="Assets\Scripts\ControlUnit.cs" />
+    <Compile Include="Assets\Scripts\SpawnColors.cs" />
+    <Compile Include="Assets\Scripts\GridManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
